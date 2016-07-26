@@ -7,23 +7,23 @@ angular.module('myoptions').controller('MyOptionsCtrl', function ($scope, $log) 
   $log.info('loading my options ctrl')
   $log.info('chrome storage is', chrome.storage)
 
-  controller.details = {jobs: []}
+  controller.details = {jobs: [], links: []}
 
   // add a job to monitor
-  controller.add = function () {
+  controller.add = function (property) {
     if (!controller.details) {
       controller.details = {}
     }
 
-    if (!controller.details.jobs) {
-      controller.details.jobs = []
+    if (!controller.details[property]) {
+      controller.details[property] = []
     }
-    controller.details.jobs.push({})
+    controller.details[property].push({})
   }
 
   // rmeove job to monitor
-  controller.remove = function (job) {
-    controller.details.jobs.splice(controller.details.jobs.indexOf(job), 1)
+  controller.remove = function (property, job) {
+    controller.details[property].splice(controller.details[property].indexOf(job), 1)
   }
 
   // Saves options to chrome.storage

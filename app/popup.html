@@ -10,7 +10,9 @@
   <div>
     <div ng-repeat="item in data track by item.name ">
       <div class="item result-{{item.result}} building-{{item.building}}" title="result={{item.result}} ; building={{item.building}}">
-        <a href="{{item.url}}">{{item.name}} - {{item.duration}}</a><i ng-show="item.building" class="icon-clock"></i>
+        <a href="{{item.url}}">{{item.name}} - {{item.duration}}</a>
+        <i ng-show="item.building" class="icon-clock"></i>
+        <a href="{{link.url}}" ng-repeat="link in item.links">{{link.title}}</a>
       </div>
     </div>
   </div>

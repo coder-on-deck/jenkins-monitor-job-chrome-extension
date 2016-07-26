@@ -10,18 +10,50 @@
   Enter jobs urls to monitor. for example <code>http://localhost:8080/jenkins/view/all/job/MyJob/</code>
 </div>
 <form ng-submit="options.save($event)">
-  <div ng-repeat="job in options.details.jobs" class="row">
-    <input ng-model="job.url"/><a href="" ng-click="options.remove(job)">remove</a>
+  <div class="items-list jobs-list">
+    <h2>Jobs</h2>
+    <div ng-repeat="job in options.details.jobs" class="row">
+      <div class="section">
+      <span class="label">URL</span><input ng-model="job.url"/><a href="" ng-click="options.remove('jobs',job)">remove</a>
+      </div>
+    </div>
+    <div class="actions">
+    <span>
+      <button ng-click="options.add('jobs')">Add Job</button>
+    </span>
+    </div>
   </div>
+
+  <div class="items-list links-list">
+    <h2>Links</h2>
+    <div ng-repeat="link in options.details.links" class="row">
+      <div class="section">
+        <span class="label">URL</span>
+        <input ng-model="link.url"/><br/>
+      </div>
+      <div class="section">
+        <span class="label">Title</span>
+        <input ng-model="link.title"/>
+        <a href="" ng-click="options.remove('links',link)">remove</a>
+      </div>
+
+
+    </div>
+    <div class="actions">
+    <span>
+      <button ng-click="options.add('links')">Add Link</button>
+    </span>
+    </div>
+  </div>
+
   <div class="actions">
     <span>
       <input type="submit" ng-click="options.save()"/>
     </span>
-    <span>
-      <button ng-click="options.add()">Add</button>
-    </span>
   </div>
 </form>
+
+
 <!-- build:js scripts/options.js -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="scripts/options.js"></script>

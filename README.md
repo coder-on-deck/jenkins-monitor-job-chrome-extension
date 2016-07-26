@@ -22,5 +22,5 @@ For now, the process is manual.
  [ ] publish a zip artifact to install manually
  [ ] publish a crx file to install
  [ ] publish to chrome webstore
- [ ] add ability to define 'links' to appear next to each job. (some places have tools that integrate with jenkins and it would be nice to jump right to them)
+ [X] add ability to define 'links' to appear next to each job. (some places have tools that integrate with jenkins and it would be nice to jump right to them)
 

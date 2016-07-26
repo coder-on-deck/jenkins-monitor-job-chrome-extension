@@ -20,7 +20,7 @@ angular.module('background').controller('BackgroundCtrl', function BackgroundCon
   }
 
   function sendData () {
-    chrome.sendMessage({type: 'data', data: results})
+    chrome.sendMessage({type: 'data', data: results, links: $scope.config.links})
   }
 
   chrome.onMessage(function (request) {
