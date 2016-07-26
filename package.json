@@ -1,0 +1,24 @@
+{
+  "name": "jenkins-job-monitor",
+  "version": "0.0.0",
+  "dependencies": {
+    "node-sass": "^3.8.0",
+    "node-zip": "^1.1.1",
+    "nodemon": "^1.10.0",
+    "standard": "^7.1.2"
+  },
+  "standard" : {
+    "globals" : ["chrome","angular"]
+  },
+  "scripts": {
+    "sass": "node-sass app/styles/main.scss -o app/styles",
+    "sass:watch": "nodemon -e scss --exec 'npm run sass --silent'",
+    "standard": "standard",
+    "standard:watch": "nodemon -e js --exec 'npm run standard --silent'",
+    "nodezip": "nodezip -c out.zip app",
+    "test": "standard"
+  },
+  "engines": {
+    "node": ">=4.2.1"
+  }
+}

@@ -1,0 +1,33 @@
+body{
+  margin:0;
+  padding:0;
+}
+
+.item{
+  padding:10px;
+  white-space: nowrap;
+  &.result-UNSTABLE{
+    background: blanchedalmond;
+  }
+  &.result-FAILURE{
+    background: #ffa07a;
+  }
+  &.result-ABORTED{
+    background: #d3d3d3;
+  }
+  &.result-SUCCESS{
+    background: #90ee90;
+  }
+}
+
+.issue-display{
+    *{
+        white-space: nowrap;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="fontello/css/fontello.css" rel="stylesheet">
+  </head>
+  <body id="popup" ng-controller="PopupCtrl">
+
+  <div>
+    <div ng-repeat="item in data track by item.name ">
+      <div class="item result-{{item.result}} building-{{item.building}}" title="result={{item.result}} ; building={{item.building}}">
+        <a href="{{item.url}}">{{item.name}} - {{item.duration}}</a><i ng-show="item.building" class="icon-clock"></i>
+      </div>
+    </div>
+  </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/chrome-extension-angular/chrome.js"></script>
+    <script src="scripts/popup.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "chrome-extension-angular",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "chrome-extension-angular":"coder-on-deck/chrome-extension-angular"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "angular": "~1.4.0"
+  }
+}

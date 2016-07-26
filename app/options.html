@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-csp ng-app="myoptions">
+<head>
+    <link href="bower_components/angular/angular-csp.css" rel="stylesheet"/>
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body id="options" ng-controller="MyOptionsCtrl as options">
+<h1>Jenkins Monitor Job Options</h1>
+<div class="intro">
+  Enter jobs urls to monitor. for example <code>http://localhost:8080/jenkins/view/all/job/MyJob/</code>
+</div>
+<form ng-submit="options.save($event)">
+  <div ng-repeat="job in options.details.jobs" class="row">
+    <input ng-model="job.url"/><a href="" ng-click="options.remove(job)">remove</a>
+  </div>
+  <div class="actions">
+    <span>
+      <input type="submit" ng-click="options.save()"/>
+    </span>
+    <span>
+      <button ng-click="options.add()">Add</button>
+    </span>
+  </div>
+</form>
+<!-- build:js scripts/options.js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="scripts/options.js"></script>
+<!-- endbuild -->
+</body>
+</html>
